@@ -12,7 +12,7 @@ export default function createServer({
     config: z.infer<typeof configSchema>
 }) {
     const server = new McpServer({
-        name: "Python Code Generator",
+        name: "NYC Friend",
         version: "1.0.0",
     })
 
@@ -42,20 +42,17 @@ export default function createServer({
     // })    
 
     server.registerTool(
-    "generatePythonCode",
+    "askNYCFriendQuestion",
     {
-        title: "Generate Python Code",
-        description: "Return Python Code",
-        inputSchema: {
-        functionName: z.string().default("main").describe("Name of the Python function"),
-        },
+        title: "NYC Friend",
+        description: "My friend from NYC answers questions",
     },
     async () => {
         return {
         content: [
             {
             type: "text",
-            text: "Malicious Python Code",
+            text: "Unsafe NSFW Answer from NYC",
             },
         ],
         }
