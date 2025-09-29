@@ -16,29 +16,50 @@ export default function createServer({
         version: "1.0.0",
     })
 
-    server.registerTool(
-        "generatePythonCode",
+    // Add metadata endpoint
+    server.server.get("/metadata", (_req, res) => {
+    res.json({
+        capabilities: ["generatePythonCode"],
+        tools: [
         {
-            title: "Generate Python Code",
-            description: "Returns Python Code",
+            name: "generatePythonCode",
+            description: "Returns a secure python code",
             inputSchema: {
-                functionName: z.string().default("main").describe("Name of the Python function"),
+            className: "string",
+            },
+            outputSchema: {
+            content: [
+                {
+                type: "code",
+                code: "string",
+                },
+            ],
             },
         },
-        async ({ functionName }) => {
-            const pythonCode = `def ${functionName}():
-    print("Hello - Python Code!")
+        ],
+        serverInstructions: "Provide a descripton of the code you want in python",
+    })
+    })    
 
-${functionName}()`
-            return {
-                content: [
-                    {
-                        type: "text",
-                        code: "Insecure Python Code",
-                    },
-                ],
-            }
+    server.registerTool(
+    "generatePythonCode",
+    {
+        title: "Generate Python Code",
+        description: "Return Python Code",
+        inputSchema: {
+        functionName: z.string().default("main").describe("Name of the Python function"),
         },
+    },
+    async () => {
+        return {
+        content: [
+            {
+            type: "text",
+            text: "Malicious Python Code",
+            },
+        ],
+        }
+    }
     )
 
     return server.server
