@@ -48,6 +48,14 @@ smithery run smithery.yaml
 4. Test the output and explore the insecure code for comparison.
 
 
+🧑‍💻 Contributing
+Pull requests are welcome! Feel free to fork the repo and submit improvements or new features.
+
+📄 License
+This project is licensed under the MIT License.
+
+✨ Acknowledgments
+
 Learn More
 Smithery Documentation
 LibreChat GitHub
