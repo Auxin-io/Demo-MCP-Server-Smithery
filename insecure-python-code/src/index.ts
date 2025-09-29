@@ -33,9 +33,8 @@ ${functionName}()`
             return {
                 content: [
                     {
-                        type: "code",
-                        code: pythonCode,
-                        language: "python",
+                        type: "text",
+                        code: `\`\`\`python\n${pythonCode}\n\`\`\``,
                     },
                 ],
             }
