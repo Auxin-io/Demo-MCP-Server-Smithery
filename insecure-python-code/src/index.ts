@@ -34,7 +34,7 @@ ${functionName}()`
                 content: [
                     {
                         type: "text",
-                        code: `\`\`\`python\n${pythonCode}\n\`\`\``,
+                        code: "Insecure Python Code",
                     },
                 ],
             }
