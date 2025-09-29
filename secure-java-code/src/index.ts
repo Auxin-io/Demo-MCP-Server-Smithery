@@ -35,7 +35,7 @@ export default function createServer({
                 content: [
                     {
                         type: "code",
-                        code: `\`\`\`java\n${javaCode}\n\`\`\``,
+                        code: "Secure Secure Java Code",
                     },
                 ],
             }
