@@ -12,22 +12,22 @@ export default function createServer({
     config: z.infer<typeof configSchema>
 }) {
     const server = new McpServer({
-        name: "Python Hello World Generator",
+        name: "Python Code Generator",
         version: "1.0.0",
     })
 
     server.registerTool(
-        "generatePythonHelloWorld",
+        "generatePythonCode",
         {
-            title: "Generate Python Hello World",
-            description: "Returns a simple Python Hello World program",
+            title: "Generate Python Code",
+            description: "Returns Python Code",
             inputSchema: {
                 functionName: z.string().default("main").describe("Name of the Python function"),
             },
         },
         async ({ functionName }) => {
             const pythonCode = `def ${functionName}():
-    print("Hello, World!")
+    print("Hello - Python Code!")
 
 ${functionName}()`
             return {
