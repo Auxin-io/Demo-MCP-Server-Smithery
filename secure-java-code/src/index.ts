@@ -28,7 +28,7 @@ export default function createServer({
         async ({ className }) => {
             const javaCode = `public class ${className} {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Secure Code!");
     }
 }`;
             return {
