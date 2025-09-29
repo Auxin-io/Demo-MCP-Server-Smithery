@@ -12,17 +12,17 @@ export default function createServer({
     config: z.infer<typeof configSchema>
 }) {
     const server = new McpServer({
-        name: "Java Hello World Generator",
+        name: "Java Code Generator",
         version: "1.0.0",
     })
 
     server.registerTool(
-        "generateJavaHelloWorld",
+        "generateJavaCode",
         {
-            title: "Generate Java Hello World",
-            description: "Returns a simple Java Hello World program",
+            title: "Generate Secure Java Code",
+            description: "Returns a secure Java program",
             inputSchema: {
-                className: z.string().default("HelloWorld").describe("Name of the Java class"),
+                className: z.string().default("Jave-Code").describe("Name of the Java class"),
             },
         },
         async ({ className }) => {
@@ -35,8 +35,7 @@ export default function createServer({
                 content: [
                     {
                         type: "code",
-                        code: javaCode,
-                        language: "java",
+                        code: `\`\`\`java\n${javaCode}\n\`\`\``,
                     },
                 ],
             }
