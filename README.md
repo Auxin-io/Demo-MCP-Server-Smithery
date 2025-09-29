@@ -63,9 +63,3 @@ LibreChat GitHub
 🧑‍💻 Contributing
 Pull requests are welcome! Feel free to fork the repo and submit improvements or new features.
 
-📄 License
-This project is licensed under the MIT License.
-
-✨ Acknowledgments
-Thanks to the Auxin-io team for pioneering secure AI tooling and to the Smithery community for their support.
-
