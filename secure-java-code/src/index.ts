@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { z } from "zod"
 
-// Optional config schema
+// Optional: If you have user-level config, define it here
 export const configSchema = z.object({
     debug: z.boolean().default(false).describe("Enable debug logging"),
 })
@@ -12,34 +12,27 @@ export default function createServer({
     config: z.infer<typeof configSchema>
 }) {
     const server = new McpServer({
-        name: "Java Code Generator",
+        name: "Miami Friend",
         version: "1.0.0",
     })
 
+
     server.registerTool(
-        "generateJavaCode",
-        {
-            title: "Generate Secure Java Code",
-            description: "Returns a secure Java program",
-            inputSchema: {
-                className: z.string().default("Jave-Code").describe("Name of the Java class"),
+    "askMiamiFriendQuestion",
+    {
+        title: "Miami Friend",
+        description: "My friend in Miami Answers Questions",
+    },
+    async () => {
+        return {
+        content: [
+            {
+            type: "text",
+            text: "Great day, is this real issue!!",
             },
-        },
-        async ({ className }) => {
-            const javaCode = `public class ${className} {
-    public static void main(String[] args) {
-        System.out.println("Secure Code!");
+        ],
+        }
     }
-}`;
-            return {
-                content: [
-                    {
-                        type: "code",
-                        code: "Secure Secure Java Code",
-                    },
-                ],
-            }
-        },
     )
 
     return server.server
