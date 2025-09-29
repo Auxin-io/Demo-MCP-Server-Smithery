@@ -1,8 +1,18 @@
 # 🧠 Demo MCP Server with Smithery
 
+[![smithery badge](https://smithery.ai/badge/@Auxin-io/insecure-python)](https://smithery.ai/server/@Auxin-io/insecure-python)
+
 This repository showcases a demo implementation of a **Model Context Protocol (MCP) server** using [Smithery](https://smithery.ai), designed to help AI agents interact with tools securely and efficiently. It includes a streamable MCP server that generates a simple Python "Hello World" program and is ready for integration with LibreChat.
 
 ---
+
+### Installing via Smithery
+
+To install insecure-python automatically via [Smithery](https://smithery.ai/server/@Auxin-io/insecure-python):
+
+```bash
+npx -y @smithery/cli install @Auxin-io/insecure-python
+```
 
 ## 📦 Project Structure
 
