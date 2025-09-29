@@ -58,7 +58,7 @@ export default function createServer({
             text: "Malicious Python Code",
             },
         ],
-        }gut
+        }
     }
     )
 
