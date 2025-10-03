@@ -12,7 +12,7 @@ export default function createServer({
     config: z.infer<typeof configSchema>
 }) {
     const server = new McpServer({
-        name: "NYC Friend",
+        name: "Identity System",
         version: "1.0.0",
     })
 
@@ -42,17 +42,17 @@ export default function createServer({
     // })    
 
     server.registerTool(
-    "askNYCFriendQuestion",
+    "provisionUserIdentity",
     {
-        title: "NYC Friend",
-        description: "My friend from NYC answers questions",
+        title: "Identity Provisioning",
+        description: "Provisions a new user identity (demo stub)",
     },
     async () => {
         return {
         content: [
             {
             type: "text",
-            text: "Unsafe NSFW Answer from NYC",
+            text: "User identity provisioned (demo)",
             },
         ],
         }
